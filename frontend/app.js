@@ -2,7 +2,7 @@
 // Diabetes Detector – Client Logic
 // =========================================================
 
-const FUNCTION_URL = '';
+const FUNCTION_URL = 'https://diabetes-predict-506965761765.us-east4.run.app';
 
 // --- DOM references --------------------------------------
 const form = document.getElementById('predict-form');
