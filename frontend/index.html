@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Detector de diabetes basado en machine learning. Ingresa tus datos clínicos y obtén una predicción al instante." />
+  <title>Diabetes Detector</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+        </svg>
+        <h1>Diabetes Detector</h1>
+      </div>
+      <p class="subtitle">Ingresa tus datos clínicos para obtener una predicción basada en inteligencia artificial</p>
+    </header>
+
+    <!-- Form -->
+    <form id="predict-form" autocomplete="off">
+      <div class="form-grid">
+        <div class="field">
+          <label for="pregnancies">Embarazos</label>
+          <input type="number" id="pregnancies" name="pregnancies" min="0" step="1" placeholder="0" required />
+        </div>
+
+        <div class="field">
+          <label for="glucose">Glucosax</label>
+          <input type="number" id="glucose" name="glucose" min="0" step="any" placeholder="mg/dL" required />
+        </div>
+
+        <div class="field">
+          <label for="blood_pressure">Presión arterial</label>
+          <input type="number" id="blood_pressure" name="blood_pressure" min="0" step="any" placeholder="mm Hg" required />
+        </div>
+
+        <div class="field">
+          <label for="skin_thickness">Grosor de piel</label>
+          <input type="number" id="skin_thickness" name="skin_thickness" min="0" step="any" placeholder="mm" required />
+        </div>
+
+        <div class="field">
+          <label for="insulin">Insulina</label>
+          <input type="number" id="insulin" name="insulin" min="0" step="any" placeholder="μU/mL" required />
+        </div>
+
+        <div class="field">
+          <label for="bmi">IMC</label>
+          <input type="number" id="bmi" name="bmi" min="0" step="any" placeholder="kg/m²" required />
+        </div>
+
+        <div class="field">
+          <label for="diabetes_pedigree">Pedigree de diabetes</label>
+          <input type="number" id="diabetes_pedigree" name="diabetes_pedigree" min="0" step="any" placeholder="0.000 – 2.500" required />
+        </div>
+
+        <div class="field">
+          <label for="age">Edad</label>
+          <input type="number" id="age" name="age" min="1" step="1" placeholder="años" required />
+        </div>
+      </div>
+
+      <button type="submit" id="btn-predict">
+        <span class="btn-text">Predecir</span>
+        <span class="btn-loader hidden"></span>
+      </button>
+    </form>
+
+    <!-- Result -->
+    <div id="result" class="result hidden"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
